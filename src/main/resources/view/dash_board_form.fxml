@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Sphere?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardFormController">
+    <children>
+        <Pane prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #696969;">
+            <children>
+                <Sphere layoutX="191.0" layoutY="113.0" radius="40" />
+                <Sphere layoutX="191.0" layoutY="227.0" radius="35" />
+                <Label layoutX="29.0" layoutY="7.0" text="T">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="25.0" layoutY="60.0" text="H">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="25.0" layoutY="114.0" prefHeight="60.0" prefWidth="30.0" text="O">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="26.0" layoutY="167.0" text="G">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="26.0" layoutY="220.0" text="A">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="97.0" layoutY="145.0" text="K">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="95.0" layoutY="199.0" text="A">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="94.0" layoutY="253.0" text="D">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="97.0" layoutY="308.0" text="E">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.3787878571134624" endY="0.3712121519175443" startX="0.22727271598396875" startY="0.7537878742723754">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color green="0.16842105984687805" blue="0.09263157844543457" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.7333333492279053" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Sphere layoutX="191.0" layoutY="330.0" radius="30" />
+            </children>
+        </Pane>
+        <Pane layoutX="200.0" layoutY="-4.0" prefHeight="34.0" prefWidth="400.0" style="-fx-background-color: #696969;" />
+        <JFXButton layoutX="344.0" layoutY="128.0" onAction="#btnAddCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 5;" text="ADD">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+        <JFXButton layoutX="344.0" layoutY="174.0" onAction="#btnUpdateCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 5;" text="UPDATE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+        <JFXButton layoutX="344.0" layoutY="223.0" onAction="#btnDeleteCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #FF0000; -fx-background-radius: 5;" text="DELETE" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+        <JFXButton layoutX="344.0" layoutY="271.0" onAction="#btnClearCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #FF0000; -fx-background-radius: 5;" text="CLEAR" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+        <JFXButton layoutX="344.0" layoutY="324.0" onAction="#btnViewCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 5;" text="VIEW">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+        <Pane layoutX="355.0" layoutY="41.0" prefHeight="34.0" prefWidth="234.0" style="-fx-background-color: #000000;">
+            <children>
+                <JFXTextField fx:id="txtSearchCustomer" focusColor="#5d647b" layoutX="2.0" layoutY="5.0" prefHeight="25.0" prefWidth="150.0" promptText="Enter ID/Phone Number" style="-fx-background-color: #C0C0C0;">
+                    <unFocusColor>
+                        <LinearGradient endX="0.15909088019168727" endY="0.3712121519175443" startX="0.28787877297762665">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.053199999034404755" green="0.2347167581319809" blue="0.2800000011920929" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </unFocusColor>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXTextField>
+                <JFXButton layoutX="161.0" layoutY="5.0" onAction="#btnSearchCustomerFormOnAction" style="-fx-background-color: #00FFFF; -fx-background-radius: 5;" text="SEARCH">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </Pane>
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</AnchorPane>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #696969;"
+            xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ViewCustomerFormController">
+    <children>
+        <Label layoutX="106.0" layoutY="14.0" prefHeight="50.0" prefWidth="387.0" text="VIEW CUSTOMER FORM">
+            <font>
+                <Font name="System Bold" size="34.0"/>
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.37121209231289953">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.15009745955467224" green="0.7075048685073853" blue="0.7368420958518982"/>
+                            </color>
+                        </Stop>
+                        <Stop offset="0.1878048780487805">
+                            <color>
+                                <Color red="0.15330000221729279" green="0.7011650204658508" blue="0.7300000190734863"/>
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0"/>
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+        <TableView fx:id="tblCustomer" layoutX="11.0" layoutY="100.0" prefHeight="200.0" prefWidth="577.0">
+            <columns>
+                <TableColumn fx:id="colCustomerID" prefWidth="84.0" text="ID"/>
+                <TableColumn fx:id="colCustomerName" prefWidth="175.20001220703125" text="NAME"/>
+                <TableColumn fx:id="colCustomerContactNumber" prefWidth="91.2000732421875" text="CONTACT NO."/>
+                <TableColumn fx:id="colCustomerDOB" minWidth="0.0" prefWidth="81.60003662109375" text="DOB"/>
+                <TableColumn fx:id="colCustomerAddress" minWidth="0.0" prefWidth="141.5999755859375" text="ADDRESS"/>
+            </columns>
+        </TableView>
+        <JFXButton layoutX="522.0" layoutY="360.0" onAction="#btnReloadOnAction"
+                   style="-fx-background-color: #FF4500; -fx-background-radius: 5;" text="RELOAD">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <Label layoutX="14.0" layoutY="315.0" text="Number of Customers :" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtNumberOfCustomers" editable="false" focusColor="#04f2e2" layoutX="149.0" layoutY="311.0"
+                      style="-fx-background-radius: 5; -fx-background-color: #FFFFF0;"/>
+        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="363.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../img/reload.png"/>
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

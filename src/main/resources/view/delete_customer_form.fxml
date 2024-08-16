@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #696969;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DeleteCustomerFormController">
+    <children>
+        <Label layoutX="103.0" layoutY="14.0" text="DELETE CUSTOMER FORM">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.37121209231289953">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.15009745955467224" green="0.7075048685073853" blue="0.7368420958518982" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.1878048780487805">
+                            <color>
+                                <Color red="0.15330000221729279" green="0.7011650204658508" blue="0.7300000190734863" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+        <Pane layoutX="10.0" layoutY="76.0" prefHeight="33.0" prefWidth="578.0" style="-fx-background-radius: 10; -fx-background-color: #FF0000;">
+            <children>
+                <JFXTextField fx:id="txtSearchCustomer" focusColor="BLACK" layoutX="38.0" layoutY="3.0" prefHeight="25.0" prefWidth="454.0" promptText="Enter ID or Contact Number" style="-fx-background-radius: 5; -fx-background-color: #C0C0C0;" />
+                <JFXButton layoutX="501.0" layoutY="4.0" onAction="#btnSearchCustomerOnAction" style="-fx-background-radius: 5; -fx-background-color: #00FFFF;" text="SEARCH">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXButton>
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/paper.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="129.0" layoutY="127.0" prefHeight="258.0" prefWidth="340.0" style="-fx-background-color: #808080; -fx-background-radius: 20;">
+            <children>
+                <JFXTextField fx:id="txtSearchedCustomerID" editable="false" focusColor="#1a1b1b" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="109.0" promptText="ID" style="-fx-background-color: #FF0000;">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="txtSearchedCustomerName" editable="false" focusColor="CRIMSON" layoutX="151.0" layoutY="94.0" prefHeight="25.0" prefWidth="175.0" promptText="Name" style="-fx-background-color: #FFFFF0;" />
+                <JFXComboBox fx:id="cmbSearchedCustomerTitle" focusColor="CRIMSON" layoutX="151.0" layoutY="54.0" prefHeight="25.0" prefWidth="109.0" promptText="Title" style="-fx-background-color: #FFFFF0;" />
+                <JFXTextField fx:id="txtSearchedCustomerAddress" editable="false" focusColor="CRIMSON" layoutX="151.0" layoutY="133.0" prefHeight="25.0" prefWidth="175.0" promptText="Address" style="-fx-background-color: #FFFFF0;" />
+                <JFXTextField fx:id="txtSearchedCustomerContact" editable="false" focusColor="CRIMSON" layoutX="151.0" layoutY="173.0" prefHeight="25.0" prefWidth="175.0" promptText="Contact Number" style="-fx-background-color: #FFFFF0;" />
+                <DatePicker fx:id="dateSearchedCustomerDOB" editable="false" layoutX="151.0" layoutY="212.0" promptText="Date of Birth" style="-fx-background-color: #FFFFF0;" />
+                <Label layoutX="11.0" layoutY="57.0" text="Title" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="11.0" layoutY="97.0" text="Name" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="11.0" layoutY="136.0" text="Address" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="10.0" layoutY="176.0" text="Contact Number" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="11.0" layoutY="215.0" text="Date of Birth" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <JFXButton layoutX="523.0" layoutY="358.0" onAction="#btnDeleteCustomerOnAction" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #FF0000; -fx-background-radius: 5;" text="DELETE" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/delete.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
