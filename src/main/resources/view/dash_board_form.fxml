@@ -238,7 +238,7 @@
         </JFXButton>
         <Pane layoutX="355.0" layoutY="41.0" prefHeight="34.0" prefWidth="234.0" style="-fx-background-color: #000000;">
             <children>
-                <JFXTextField fx:id="txtSearchCustomer" focusColor="#5d647b" layoutX="2.0" layoutY="5.0" prefHeight="25.0" prefWidth="150.0" promptText="Enter ID/Phone Number" style="-fx-background-color: #C0C0C0;">
+                <JFXTextField fx:id="txtSearchCustomer" focusColor="#5d647b" layoutX="2.0" layoutY="5.0" onAction="#txtSearchCustomerOnAction" prefHeight="25.0" prefWidth="150.0" promptText="Enter ID/Phone Number" style="-fx-background-color: #C0C0C0;">
                     <unFocusColor>
                         <LinearGradient endX="0.15909088019168727" endY="0.3712121519175443" startX="0.28787877297762665">
                             <stops>

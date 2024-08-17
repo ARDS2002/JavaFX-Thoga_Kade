@@ -46,6 +46,21 @@ public class SearchCustomerFormController implements Initializable {
         searchedCustomerDetail();
     }
 
+    private void searchCustomer() {
+        if (!txtSearchCustomer.getText().isEmpty() && SearchCustomerController.isCustomerExist(txtSearchCustomer.getText())) {
+            Customer customer = SearchCustomerController.getSearchedCustomer(txtSearchCustomer.getText());
+            if (null != customer && null != SearchCustomerController.extractCustomerName(customer.getCustomerName())) {
+                txtSearchedCustomerName.setText(SearchCustomerController.extractCustomerName(customer.getCustomerName()));
+                txtSearchedCustomerID.setText(customer.getCustomerID());
+                cmbSearchedCustomerTitle.setValue(customer.getCustomerTitle());
+                txtSearchedCustomerName.setText(SearchCustomerController.extractCustomerName(customer.getCustomerName()));
+                txtSearchedCustomerAddress.setText(customer.getCustomerAddress());
+                txtSearchedCustomerContact.setText(customer.getCustomerContactNumber());
+                dateSearchedCustomerDOB.setValue(customer.getCustomerDOB());
+            }
+        }
+    }
+
     private void searchedCustomerDetail() {
         if (SearchCustomerController.getSearchedCustomerContactOrID() != null) {
             Customer customer = SearchCustomerController.getSearchedCustomer(SearchCustomerController.getSearchedCustomerContactOrID());
@@ -64,18 +79,10 @@ public class SearchCustomerFormController implements Initializable {
 
     @FXML
     void btnSearchCustomerOnAction(ActionEvent event) {
-        if (!txtSearchCustomer.getText().isEmpty() && SearchCustomerController.isCustomerExist(txtSearchCustomer.getText())) {
-            Customer customer = SearchCustomerController.getSearchedCustomer(txtSearchCustomer.getText());
-            if (null != customer && null != SearchCustomerController.extractCustomerName(customer.getCustomerName())) {
-                txtSearchedCustomerName.setText(SearchCustomerController.extractCustomerName(customer.getCustomerName()));
-                txtSearchedCustomerID.setText(customer.getCustomerID());
-                cmbSearchedCustomerTitle.setValue(customer.getCustomerTitle());
-                txtSearchedCustomerName.setText(SearchCustomerController.extractCustomerName(customer.getCustomerName()));
-                txtSearchedCustomerAddress.setText(customer.getCustomerAddress());
-                txtSearchedCustomerContact.setText(customer.getCustomerContactNumber());
-                dateSearchedCustomerDOB.setValue(customer.getCustomerDOB());
-            }
-        }
+        searchCustomer();
     }
 
+    public void txtSearchCustomerOnAction(ActionEvent actionEvent) {
+        searchCustomer();
+    }
 }

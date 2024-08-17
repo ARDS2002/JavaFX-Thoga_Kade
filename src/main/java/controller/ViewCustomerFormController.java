@@ -57,7 +57,12 @@ public class ViewCustomerFormController implements Initializable {
         customerObservableList.addAll(customerList);
 
         tblCustomer.setItems(customerObservableList);
-        txtNumberOfCustomers.setText("" + DBConnection.getInstance().getConnection().size());
+        int numberOfCustomers = DBConnection.getInstance().getConnection().size();
+        if (numberOfCustomers < 10) {
+            txtNumberOfCustomers.setText("0" + numberOfCustomers);
+        } else {
+            txtNumberOfCustomers.setText("" + numberOfCustomers);
+        }
     }
 
     @FXML

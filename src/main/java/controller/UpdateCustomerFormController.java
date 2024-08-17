@@ -94,4 +94,7 @@ public class UpdateCustomerFormController implements Initializable {
         }
     }
 
+    public void txtSearchCustomerOnAction(ActionEvent actionEvent) {
+        setCustomerDetail();
+    }
 }
