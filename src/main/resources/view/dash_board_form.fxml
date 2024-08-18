@@ -4,6 +4,8 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
@@ -208,37 +210,42 @@
                     </textFill>
                 </Label>
                 <Sphere layoutX="191.0" layoutY="330.0" radius="30" />
+            <JFXButton layoutX="14.0" layoutY="361.0" onAction="#btnExitPlatformOnAction" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #000000; -fx-background-radius: 7;" text="EXIT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
             </children>
         </Pane>
         <Pane layoutX="200.0" layoutY="-4.0" prefHeight="34.0" prefWidth="400.0" style="-fx-background-color: #696969;" />
-        <JFXButton layoutX="344.0" layoutY="128.0" onAction="#btnAddCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 5;" text="ADD">
+        <JFXButton layoutX="344.0" layoutY="128.0" onAction="#btnAddCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 7;" text="ADD">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </JFXButton>
-        <JFXButton layoutX="344.0" layoutY="174.0" onAction="#btnUpdateCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 5;" text="UPDATE">
+        <JFXButton layoutX="344.0" layoutY="175.0" onAction="#btnUpdateCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 7;" text="UPDATE">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </JFXButton>
-        <JFXButton layoutX="344.0" layoutY="223.0" onAction="#btnDeleteCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #FF0000; -fx-background-radius: 5;" text="DELETE" textFill="WHITE">
+        <JFXButton layoutX="344.0" layoutY="223.0" onAction="#btnDeleteCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #FF0000; -fx-background-radius: 7;" text="DELETE" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </JFXButton>
-        <JFXButton layoutX="344.0" layoutY="271.0" onAction="#btnClearCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #FF0000; -fx-background-radius: 5;" text="CLEAR" textFill="WHITE">
+        <JFXButton layoutX="344.0" layoutY="318.0" onAction="#btnClearCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #FF0000; -fx-background-radius: 7;" text="CLEAR" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </JFXButton>
-        <JFXButton layoutX="344.0" layoutY="324.0" onAction="#btnViewCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 5;" text="VIEW">
+        <JFXButton layoutX="345.0" layoutY="271.0" onAction="#btnViewCustomerFormOnAction" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #00FF00; -fx-background-radius: 7;" text="VIEW">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </JFXButton>
-        <Pane layoutX="355.0" layoutY="41.0" prefHeight="34.0" prefWidth="234.0" style="-fx-background-color: #000000;">
+        <Pane layoutX="207.0" layoutY="41.0" prefHeight="34.0" prefWidth="392.0" style="-fx-background-color: black;">
             <children>
-                <JFXTextField fx:id="txtSearchCustomer" focusColor="#5d647b" layoutX="2.0" layoutY="5.0" onAction="#txtSearchCustomerOnAction" prefHeight="25.0" prefWidth="150.0" promptText="Enter ID/Phone Number" style="-fx-background-color: #C0C0C0;">
+                <JFXTextField fx:id="txtSearchCustomer" alignment="CENTER" focusColor="#5d647b" layoutX="13.0" layoutY="5.0" onAction="#txtSearchCustomerOnAction" prefHeight="25.0" prefWidth="334.0" promptText="Enter ID/Phone Number" style="-fx-background-color: #C0C0C0; -fx-background-radius: 7;">
                     <unFocusColor>
                         <LinearGradient endX="0.15909088019168727" endY="0.3712121519175443" startX="0.28787877297762665">
                             <stops>
@@ -252,18 +259,18 @@
                                         <Color red="0.053199999034404755" green="0.2347167581319809" blue="0.2800000011920929" />
                                     </color>
                                 </Stop>
-                            </stops>
+                            </stops>ෆ
                         </LinearGradient>
                     </unFocusColor>
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </JFXTextField>
-                <JFXButton layoutX="161.0" layoutY="5.0" onAction="#btnSearchCustomerFormOnAction" style="-fx-background-color: #00FFFF; -fx-background-radius: 5;" text="SEARCH">
-                    <font>
-                        <Font name="System Bold" size="12.0" />
-                    </font>
-                </JFXButton>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="353.0" layoutY="5.0" onMouseClicked="#imgSearchCustomerOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/find.png" />
+               </image>
+            </ImageView>
             </children>
         </Pane>
     </children>

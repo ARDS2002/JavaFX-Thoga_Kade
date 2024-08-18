@@ -58,6 +58,8 @@ public class SearchCustomerFormController implements Initializable {
                 txtSearchedCustomerContact.setText(customer.getCustomerContactNumber());
                 dateSearchedCustomerDOB.setValue(customer.getCustomerDOB());
             }
+        } else {
+            clearFields();
         }
     }
 
@@ -74,7 +76,19 @@ public class SearchCustomerFormController implements Initializable {
                 dateSearchedCustomerDOB.setValue(customer.getCustomerDOB());
                 SearchCustomerController.setSearchedCustomerContactOrID(null);
             }
+        } else {
+            clearFields();
         }
+    }
+
+    private void clearFields() {
+        txtSearchCustomer.clear();
+        txtSearchedCustomerID.clear();
+        cmbSearchedCustomerTitle.setValue(null);
+        txtSearchedCustomerName.clear();
+        txtSearchedCustomerAddress.clear();
+        txtSearchedCustomerContact.clear();
+        dateSearchedCustomerDOB.setValue(null);
     }
 
     @FXML

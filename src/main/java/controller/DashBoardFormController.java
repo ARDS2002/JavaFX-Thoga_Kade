@@ -1,14 +1,19 @@
 package controller;
 
 import com.jfoenix.controls.JFXTextField;
+import db.DBConnection;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class DashBoardFormController {
 
@@ -17,17 +22,65 @@ public class DashBoardFormController {
     private Stage addCustomerFormStage;
     private Stage updateCustomerFormStage;
     private Stage deleteCustomerFormStage;
-    private Stage clearCustomerFormStage;
     private Stage searchCustomerFormStage;
     private Stage viewCustomerFormStage;
 
     private void searchCustomer() {
+        String customerSearchText = txtSearchCustomer.getText().trim();
+
+        if (!customerSearchText.isEmpty()) {
+            try {
+                if (SearchCustomerController.isCustomerExist(customerSearchText)) {
+                    SearchCustomerController.setSearchedCustomerContactOrID(customerSearchText);
+                    txtSearchCustomer.clear();
+
+                    if (searchCustomerFormStage == null) {
+                        searchCustomerFormStage = new Stage();
+                        searchCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/search_customer_form.fxml"))));
+                        searchCustomerFormStage.setResizable(false);
+                        searchCustomerFormStage.setTitle("SEARCH CUSTOMER FORM");
+                        searchCustomerFormStage.setOnCloseRequest(event -> searchCustomerFormStage = null);
+                    } else {
+                        // Optionally reload the scene if you want to reset the form
+                        searchCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/search_customer_form.fxml"))));
+                    }
+                    searchCustomerFormStage.show();
+                    searchCustomerFormStage.toFront();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Customer Not Found");
+                    alert.setHeaderText("Customer Search Error");
+                    alert.setContentText("No customer found with the provided ID or contact.");
+                    alert.showAndWait();
+
+                    // Ensure the stage is set to null to allow for new searches
+                    searchCustomerFormStage = null;
+                }
+            } catch (IOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Loading Form");
+                alert.setHeaderText("Unable to load the search customer form.");
+                alert.setContentText(e.getMessage());
+                alert.showAndWait();
+                throw new RuntimeException(e);
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Invalid Input");
+            alert.setHeaderText("Input Error!");
+            alert.setContentText("Please enter a customer ID or contact.");
+            alert.showAndWait();
+        }
+    }
+
+    /*private void searchCustomer() {
         if (searchCustomerFormStage == null) {
             searchCustomerFormStage = new Stage();
             try {
                 if (!txtSearchCustomer.getText().isEmpty()) {
                     if (SearchCustomerController.isCustomerExist(txtSearchCustomer.getText())) {
                         SearchCustomerController.setSearchedCustomerContactOrID(txtSearchCustomer.getText());
+                        txtSearchCustomer.clear();
                         searchCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/search_customer_form.fxml"))));
                         searchCustomerFormStage.setResizable(false);
                         searchCustomerFormStage.setTitle("SEARCH CUSTOMER FORM");
@@ -37,7 +90,11 @@ public class DashBoardFormController {
                         new Alert(Alert.AlertType.ERROR);
                     }
                 } else {
-                    new Alert(Alert.AlertType.ERROR);
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error Dialog");
+                    alert.setHeaderText("Error Alert Example");
+                    alert.setContentText("This is an error alert.");
+                    alert.showAndWait();
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -45,7 +102,7 @@ public class DashBoardFormController {
         } else {
             searchCustomerFormStage.toFront();
         }
-    }
+    }*/
 
     public void btnAddCustomerFormOnAction(ActionEvent actionEvent) {
         if (addCustomerFormStage == null) {
@@ -99,27 +156,33 @@ public class DashBoardFormController {
     }
 
     public void btnClearCustomerFormOnAction(ActionEvent actionEvent) {
-        if (clearCustomerFormStage == null) {
-            clearCustomerFormStage = new Stage();
-            try {
-                clearCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/clear_customer_form.fxml"))));
-                clearCustomerFormStage.setResizable(false);
-                clearCustomerFormStage.setTitle("CLEAR CUSTOMER FORM");
-                clearCustomerFormStage.setOnCloseRequest(event -> clearCustomerFormStage = null);
-                clearCustomerFormStage.show();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure, you want to CLEAR ALL CUSTOMER DATA?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            if (!DBConnection.getInstance().getConnection().isEmpty()) {
+                DBConnection.getInstance().getConnection().clear();
+            } else {
+                Alert alertInformEmpty = new Alert(Alert.AlertType.INFORMATION);
+                alertInformEmpty.setTitle("Information");
+                alertInformEmpty.setHeaderText(null);
+                alertInformEmpty.setContentText("No data to clear!");
+                alertInformEmpty.showAndWait();
             }
         } else {
-            clearCustomerFormStage.toFront();
+            alert.close();
         }
     }
 
-    public void btnSearchCustomerFormOnAction(ActionEvent actionEvent) {
+    public void txtSearchCustomerOnAction(ActionEvent actionEvent) {
         searchCustomer();
     }
 
-    public void txtSearchCustomerOnAction(ActionEvent actionEvent) {
+    public void imgSearchCustomerOnMouseClicked(MouseEvent mouseEvent) {
         searchCustomer();
     }
 
@@ -137,6 +200,21 @@ public class DashBoardFormController {
             }
         } else {
             viewCustomerFormStage.toFront();
+        }
+    }
+
+    public void btnExitPlatformOnAction(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure, you want to EXIT?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            Platform.exit();
+        } else {
+            alert.close();
         }
     }
 
