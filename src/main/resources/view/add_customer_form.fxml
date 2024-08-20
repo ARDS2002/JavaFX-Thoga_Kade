@@ -52,10 +52,17 @@
         <JFXTextField fx:id="txtCustomerName" focusColor="#04f2e2" layoutX="73.0" layoutY="174.0" promptText="Name" style="-fx-background-color: #C0C0C0; -fx-background-radius: 5;" />
         <JFXTextField fx:id="txtCustomerAddress" focusColor="#04f2e2" layoutX="73.0" layoutY="221.0" promptText="Address" style="-fx-background-color: #C0C0C0; -fx-background-radius: 5;" />
         <JFXTextField fx:id="txtCustomerContactNumber" focusColor="#04f2e2" layoutX="73.0" layoutY="268.0" promptText="Contact Number" style="-fx-background-color: #C0C0C0; -fx-background-radius: 5;" />
-        <JFXButton defaultButton="true" layoutX="223.0" layoutY="357.0" onAction="#btnAddCustomerOnAction" prefHeight="11.0" prefWidth="66.0" style="-fx-background-color: #04f2e2; -fx-background-radius: 15;" text="Add">
+        <JFXButton defaultButton="true" layoutX="223.0" layoutY="357.0" onAction="#btnAddCustomerOnAction" prefHeight="11.0" prefWidth="66.0" style="-fx-background-color: #04f2e2; -fx-background-radius: 15;" text="ADD">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/add-user.png" />
+               </image>
+            </ImageView>
+         </graphic>
         </JFXButton>
         <ImageView fitHeight="3205.0" fitWidth="20.0" layoutX="17.0" layoutY="360.0" onMouseClicked="#imgAddCustomerOnMouseClick" pickOnBounds="true" preserveRatio="true">
             <image>

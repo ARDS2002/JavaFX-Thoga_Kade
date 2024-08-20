@@ -100,12 +100,12 @@
             <InnerShadow height="68.96" radius="36.6125" width="79.49" />
          </effect>
         </Pane>
-        <JFXButton layoutX="503.0" layoutY="359.0" onAction="#btnUpdateCustomerOnAction" style="-fx-background-color: #FF7F50; -fx-background-radius: 15;" text="UPDATE">
+        <JFXButton defaultButton="true" layoutX="503.0" layoutY="359.0" onAction="#btnUpdateCustomerOnAction" style="-fx-background-color: #FF7F50; -fx-background-radius: 15;" text="UPDATE">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="20.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/system-update.png" />
                </image>

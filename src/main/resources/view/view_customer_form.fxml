@@ -41,7 +41,7 @@
                 </LinearGradient>
             </textFill>
         </Label>
-        <TableView fx:id="tblCustomer" layoutX="11.0" layoutY="100.0" prefHeight="200.0" prefWidth="577.0">
+        <TableView fx:id="tblCustomer" layoutX="11.0" layoutY="100.0" prefHeight="200.0" prefWidth="577.0" style="-fx-background-radius: 8;">
             <columns>
                 <TableColumn fx:id="colCustomerID" prefWidth="84.0" style="-fx-background-color: #696969; -fx-font-weight: bold; -fx-text-fill: yellow; -fx-background-radius: 5;" text="ID" />
                 <TableColumn fx:id="colCustomerName" prefWidth="175.20001220703125" text="NAME" />
@@ -55,7 +55,7 @@
                 <Font name="System Bold" size="12.0" />
             </font>
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/reload.png" />
                </image>
@@ -68,12 +68,12 @@
             </font>
         </Label>
         <JFXTextField fx:id="txtNumberOfCustomers" editable="false" focusColor="ORANGERED" layoutX="453.0" layoutY="309.0" style="-fx-background-radius: 5; -fx-background-color: #FFFFF0;" />
-      <JFXButton layoutX="14.0" layoutY="64.0" onAction="#btnRefreshOnAction" prefHeight="28.0" prefWidth="20.0" style="-fx-background-color: #000080; -fx-background-radius: 10;">
+      <JFXButton layoutX="11.0" layoutY="69.0" onAction="#btnRefreshOnAction" prefHeight="26.0" prefWidth="14.0" style="-fx-background-color: #000080; -fx-background-radius: 10;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/refresh-button.png" />
                </image>

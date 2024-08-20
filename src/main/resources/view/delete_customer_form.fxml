@@ -100,12 +100,12 @@
                 <InnerShadow height="74.53" radius="38.0025" width="79.48" />
             </effect>
         </Pane>
-        <JFXButton layoutX="500.0" layoutY="358.0" onAction="#btnDeleteCustomerOnAction" prefHeight="28.0" prefWidth="85.0" style="-fx-background-color: #DC143C; -fx-background-radius: 15;" text="DELETE" textFill="WHITE">
+        <JFXButton defaultButton="true" layoutX="500.0" layoutY="358.0" onAction="#btnDeleteCustomerOnAction" prefHeight="28.0" prefWidth="85.0" style="-fx-background-color: #DC143C; -fx-background-radius: 15;" text="DELETE" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/delete.png" />
                </image>
