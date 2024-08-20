@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.Collections;
@@ -97,6 +98,10 @@ public class SearchCustomerFormController implements Initializable {
     }
 
     public void txtSearchCustomerOnAction(ActionEvent actionEvent) {
+        searchCustomer();
+    }
+
+    public void imgSearchOnMouseClick(MouseEvent mouseEvent) {
         searchCustomer();
     }
 }

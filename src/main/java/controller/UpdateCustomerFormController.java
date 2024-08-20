@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.Collections;
@@ -63,6 +64,21 @@ public class UpdateCustomerFormController implements Initializable {
 
     }
 
+    private void updateCustomer() {
+        boolean isUpdated = UpdateCustomerController.updateCustomerDetail(new Customer(txtSearchedCustomerID.getText(),
+                cmbSearchedCustomerTitle.getValue(),
+                txtSearchedCustomerName.getText(),
+                txtSearchedCustomerAddress.getText(),
+                txtSearchedCustomerContact.getText(),
+                dateSearchedCustomerDOB.getValue()));
+        if (isUpdated) {
+            new Alert(Alert.AlertType.INFORMATION);
+            clearFields();
+        } else {
+            new Alert(Alert.AlertType.ERROR);
+        }
+    }
+
     private void clearFields() {
         txtSearchCustomer.clear();
         txtSearchedCustomerID.clear();
@@ -80,21 +96,18 @@ public class UpdateCustomerFormController implements Initializable {
 
     @FXML
     void btnUpdateCustomerOnAction(ActionEvent event) {
-        boolean isUpdated = UpdateCustomerController.updateCustomerDetail(new Customer(txtSearchedCustomerID.getText(),
-                cmbSearchedCustomerTitle.getValue(),
-                txtSearchedCustomerName.getText(),
-                txtSearchedCustomerAddress.getText(),
-                txtSearchedCustomerContact.getText(),
-                dateSearchedCustomerDOB.getValue()));
-        if (isUpdated) {
-            new Alert(Alert.AlertType.INFORMATION);
-            clearFields();
-        } else {
-            new Alert(Alert.AlertType.ERROR);
-        }
+        updateCustomer();
     }
 
     public void txtSearchCustomerOnAction(ActionEvent actionEvent) {
+        setCustomerDetail();
+    }
+
+    public void imgUpdateOnMouseClick(MouseEvent mouseEvent) {
+        updateCustomer();
+    }
+
+    public void imgSearchOnMouseClick(MouseEvent mouseEvent) {
         setCustomerDetail();
     }
 }

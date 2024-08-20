@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.Collections;
@@ -43,17 +44,7 @@ public class AddCustomerFormController implements Initializable {
         cmbCustomerTitle.setItems(customerTitle);
     }
 
-    private void clearFields() {
-        txtCustomerID.clear();
-        cmbCustomerTitle.setValue(null);
-        txtCustomerName.clear();
-        txtCustomerAddress.clear();
-        txtCustomerContactNumber.clear();
-        dateCustomerDOB.setValue(null);
-    }
-
-    @FXML
-    void btnAddCustomerOnAction(ActionEvent event) {
+    private void addCustomer() {
         try {
             if (null != cmbCustomerTitle.getValue()
                     && null != txtCustomerName.getText()
@@ -65,7 +56,7 @@ public class AddCustomerFormController implements Initializable {
                     txtCustomerID.setText(SearchCustomerController.getSearchedCustomer(txtCustomerContactNumber.getText()).getCustomerID());
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     // Set the title of the alert dialog
-                    alert.setTitle("THOGAKADE");
+                    alert.setTitle("Information");
                     // Set the header text (can be null to hide the header)
                     alert.setHeaderText(null);
                     // Set the content text
@@ -82,7 +73,23 @@ public class AddCustomerFormController implements Initializable {
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
-
     }
 
+    private void clearFields() {
+        txtCustomerID.clear();
+        cmbCustomerTitle.setValue(null);
+        txtCustomerName.clear();
+        txtCustomerAddress.clear();
+        txtCustomerContactNumber.clear();
+        dateCustomerDOB.setValue(null);
+    }
+
+    @FXML
+    void btnAddCustomerOnAction(ActionEvent event) {
+        addCustomer();
+    }
+
+    public void imgAddCustomerOnMouseClick(MouseEvent mouseEvent) {
+        addCustomer();
+    }
 }

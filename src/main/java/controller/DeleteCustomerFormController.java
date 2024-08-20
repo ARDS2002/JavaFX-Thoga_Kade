@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.Collections;
@@ -46,29 +47,7 @@ public class DeleteCustomerFormController extends SearchCustomerController imple
         cmbSearchedCustomerTitle.setItems(customerTitle);
     }
 
-    private void clearFields() {
-        txtSearchCustomer.clear();
-        txtSearchedCustomerID.clear();
-        cmbSearchedCustomerTitle.setValue(null);
-        txtSearchedCustomerName.clear();
-        txtSearchedCustomerAddress.clear();
-        txtSearchedCustomerContact.clear();
-        dateSearchedCustomerDOB.setValue(null);
-    }
-
-    @FXML
-    void btnDeleteCustomerOnAction(ActionEvent event) {
-        if (!txtSearchedCustomerID.getText().isEmpty()) {
-            Customer customer = getSearchedCustomer(txtSearchedCustomerID.getText());
-            if (null != customer) {
-                DBConnection.getInstance().getConnection().remove(customer);
-                clearFields();
-            }
-        }
-    }
-
-    @FXML
-    void btnSearchCustomerOnAction(ActionEvent event) {
+    private void searchCustomer() {
         if (!txtSearchCustomer.getText().isEmpty() && isCustomerExist(txtSearchCustomer.getText())) {
             Customer customer = getSearchedCustomer(txtSearchCustomer.getText());
             if (null != customer && null != extractCustomerName(customer.getCustomerName())) {
@@ -83,4 +62,45 @@ public class DeleteCustomerFormController extends SearchCustomerController imple
         }
     }
 
+    private void deleteCustomer() {
+        if (!txtSearchedCustomerID.getText().isEmpty()) {
+            Customer customer = getSearchedCustomer(txtSearchedCustomerID.getText());
+            if (null != customer) {
+                DBConnection.getInstance().getConnection().remove(customer);
+                clearFields();
+            }
+        }
+    }
+
+    private void clearFields() {
+        txtSearchCustomer.clear();
+        txtSearchedCustomerID.clear();
+        cmbSearchedCustomerTitle.setValue(null);
+        txtSearchedCustomerName.clear();
+        txtSearchedCustomerAddress.clear();
+        txtSearchedCustomerContact.clear();
+        dateSearchedCustomerDOB.setValue(null);
+    }
+
+    @FXML
+    void btnDeleteCustomerOnAction(ActionEvent event) {
+        deleteCustomer();
+    }
+
+    @FXML
+    void btnSearchCustomerOnAction(ActionEvent event) {
+        searchCustomer();
+    }
+
+    public void imgSearchOnMouseClick(MouseEvent mouseEvent) {
+        searchCustomer();
+    }
+
+    public void imageDeleteOnMouseClick(MouseEvent mouseEvent) {
+        deleteCustomer();
+    }
+
+    public void txtSearchCustomerOnAction(ActionEvent actionEvent) {
+        searchCustomer();
+    }
 }

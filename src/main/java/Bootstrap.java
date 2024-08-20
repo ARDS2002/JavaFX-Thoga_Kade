@@ -13,6 +13,7 @@ public class Bootstrap extends Application {
     public void start(Stage stage) throws Exception {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/dash_board_form.fxml"))));
         stage.setResizable(false);
+        stage.setTitle("Thoga-Kade| DASHBOARD FORM");
         stage.setOnCloseRequest(windowEvent -> Platform.exit());
         stage.show();
     }

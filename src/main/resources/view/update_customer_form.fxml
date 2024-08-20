@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -45,12 +46,12 @@
         <Pane layoutX="10.0" layoutY="78.0" prefHeight="33.0" prefWidth="578.0" style="-fx-background-radius: 10; -fx-background-color: #FF7F50;">
             <children>
                 <JFXTextField fx:id="txtSearchCustomer" focusColor="BLACK" layoutX="38.0" layoutY="3.0" onAction="#txtSearchCustomerOnAction" prefHeight="25.0" prefWidth="454.0" promptText="Enter ID or Contact Number" style="-fx-background-radius: 5; -fx-background-color: #C0C0C0;" />
-                <JFXButton layoutX="501.0" layoutY="4.0" onAction="#btnSearchCustomerOnAction" style="-fx-background-radius: 5; -fx-background-color: #00FFFF;" text="SEARCH">
+                <JFXButton layoutX="501.0" layoutY="4.0" onAction="#btnSearchCustomerOnAction" style="-fx-background-radius: 15; -fx-background-color: #FFA07A;" text="SEARCH">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </JFXButton>
-                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="8.0" onMouseClicked="#imgSearchOnMouseClick" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../img/paper.png" />
                     </image>
@@ -59,7 +60,7 @@
         </Pane>
         <Pane layoutX="130.0" layoutY="127.0" prefHeight="258.0" prefWidth="340.0" style="-fx-background-color: #808080; -fx-background-radius: 20;">
             <children>
-                <JFXTextField fx:id="txtSearchedCustomerID" editable="false" focusColor="#1a1b1b" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="109.0" promptText="ID" style="-fx-background-color: #FF7F50;">
+                <JFXTextField fx:id="txtSearchedCustomerID" editable="false" focusColor="#1a1b1b" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="109.0" promptText="ID" style="-fx-background-color: #FF7F50; -fx-background-radius: 8;">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
@@ -95,13 +96,23 @@
                     </font>
                 </Label>
             </children>
+         <effect>
+            <InnerShadow height="68.96" radius="36.6125" width="79.49" />
+         </effect>
         </Pane>
-        <JFXButton layoutX="517.0" layoutY="360.0" onAction="#btnUpdateCustomerOnAction" style="-fx-background-color: #FF7F50; -fx-background-radius: 5;" text="UPDATE">
+        <JFXButton layoutX="503.0" layoutY="359.0" onAction="#btnUpdateCustomerOnAction" style="-fx-background-color: #FF7F50; -fx-background-radius: 15;" text="UPDATE">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/system-update.png" />
+               </image>
+            </ImageView>
+         </graphic>
         </JFXButton>
-        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="12.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="12.0" layoutY="363.0" onMouseClicked="#imgUpdateOnMouseClick" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../img/system-update.png" />
             </image>

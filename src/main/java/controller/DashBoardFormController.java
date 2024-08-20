@@ -38,7 +38,7 @@ public class DashBoardFormController {
                         searchCustomerFormStage = new Stage();
                         searchCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/search_customer_form.fxml"))));
                         searchCustomerFormStage.setResizable(false);
-                        searchCustomerFormStage.setTitle("SEARCH CUSTOMER FORM");
+                        searchCustomerFormStage.setTitle("Thoga-Kade| SEARCH CUSTOMER FORM");
                         searchCustomerFormStage.setOnCloseRequest(event -> searchCustomerFormStage = null);
                     } else {
                         // Optionally reload the scene if you want to reset the form
@@ -110,7 +110,7 @@ public class DashBoardFormController {
             try {
                 addCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/add_customer_form.fxml"))));
                 addCustomerFormStage.setResizable(false);
-                addCustomerFormStage.setTitle("ADD CUSTOMER FORM");
+                addCustomerFormStage.setTitle("Thoga-Kade| ADD CUSTOMER FORM");
                 addCustomerFormStage.setOnCloseRequest(event -> addCustomerFormStage = null);
                 addCustomerFormStage.show();
             } catch (IOException e) {
@@ -127,7 +127,7 @@ public class DashBoardFormController {
             try {
                 updateCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/update_customer_form.fxml"))));
                 updateCustomerFormStage.setResizable(false);
-                updateCustomerFormStage.setTitle("UPDATE CUSTOMER FORM");
+                updateCustomerFormStage.setTitle("Thoga-Kade| UPDATE CUSTOMER FORM");
                 updateCustomerFormStage.setOnCloseRequest(event -> updateCustomerFormStage = null);
                 updateCustomerFormStage.show();
             } catch (IOException e) {
@@ -144,7 +144,7 @@ public class DashBoardFormController {
             try {
                 deleteCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/delete_customer_form.fxml"))));
                 deleteCustomerFormStage.setResizable(false);
-                deleteCustomerFormStage.setTitle("DELETE CUSTOMER FORM");
+                deleteCustomerFormStage.setTitle("Thoga-Kade| DELETE CUSTOMER FORM");
                 deleteCustomerFormStage.setOnCloseRequest(event -> deleteCustomerFormStage = null);
                 deleteCustomerFormStage.show();
             } catch (IOException e) {
@@ -192,7 +192,7 @@ public class DashBoardFormController {
             try {
                 viewCustomerFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/view_customer_form.fxml"))));
                 viewCustomerFormStage.setResizable(false);
-                viewCustomerFormStage.setTitle("VIEW CUSTOMER FORM");
+                viewCustomerFormStage.setTitle("Thoga-Kade| VIEW CUSTOMER FORM");
                 viewCustomerFormStage.setOnCloseRequest(event -> viewCustomerFormStage = null);
                 viewCustomerFormStage.show();
             } catch (IOException e) {
