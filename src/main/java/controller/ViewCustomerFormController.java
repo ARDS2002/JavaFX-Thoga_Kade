@@ -55,6 +55,7 @@ public class ViewCustomerFormController implements Initializable {
     }
 
     public void loadTable() {
+
         List<Customer> customerList = DBConnection.getInstance().getConnection();
         ObservableList<Customer> customerObservableList = FXCollections.observableArrayList();
 
@@ -67,6 +68,7 @@ public class ViewCustomerFormController implements Initializable {
         } else {
             txtNumberOfCustomers.setText("" + numberOfCustomers);
         }
+        
     }
 
     @FXML
